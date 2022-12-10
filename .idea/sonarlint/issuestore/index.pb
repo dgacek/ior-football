@@ -20,3 +20,7 @@ w
 G.idea/sonarlint/issuestore/f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e,5\2\52114fdaa426e9b83a3c5df4e11c4f0ebbcd814b
 w
 G.idea/sonarlint/issuestore/0/5/05efc8b1657769a27696d478ded1e95f38737233,3\c\3c8c56407c35e5f5ebbd6c7250a79af8128a13a6
+[
++src/main/java/ior/project/model/Person.java,b\5\b54f2afb334eb613c36706acba3b9ff891e48d7f
+[
++src/main/java/ior/project/model/Player.java,f\0\f01329b2dd404fc02aebb8ed367c70e5aad8e748

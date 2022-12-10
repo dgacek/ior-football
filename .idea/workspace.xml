@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d30a1f21-5200-4f5a-ad41-bf8304cdef0c" name="Changes" comment="hibernate conf fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ior/project/DbUtils.java" afterDir="false" />
+    <list default="true" id="d30a1f21-5200-4f5a-ad41-bf8304cdef0c" name="Changes" comment="prepare main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +117,7 @@
       <workItem from="1670539661602" duration="694000" />
       <workItem from="1670692038623" duration="4082000" />
       <workItem from="1670697134027" duration="80000" />
-      <workItem from="1670698688508" duration="3076000" />
+      <workItem from="1670698688508" duration="4160000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670537304302</created>
@@ -149,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670700710322</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="prepare main">
+      <created>1670702170705</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670702170705</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +176,7 @@
     <MESSAGE value="hibernate setup - in-memory H2" />
     <MESSAGE value="model" />
     <MESSAGE value="hibernate conf fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="hibernate conf fix" />
+    <MESSAGE value="prepare main" />
+    <option name="LAST_COMMIT_MESSAGE" value="prepare main" />
   </component>
 </project>
