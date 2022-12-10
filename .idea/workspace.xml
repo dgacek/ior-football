@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d30a1f21-5200-4f5a-ad41-bf8304cdef0c" name="Changes" comment="model">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="d30a1f21-5200-4f5a-ad41-bf8304cdef0c" name="Changes" comment="hibernate conf fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ior/project/DbUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -121,7 +119,7 @@
       <workItem from="1670539661602" duration="694000" />
       <workItem from="1670692038623" duration="4082000" />
       <workItem from="1670697134027" duration="80000" />
-      <workItem from="1670698688508" duration="1891000" />
+      <workItem from="1670698688508" duration="3076000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670537304302</created>
@@ -144,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670696637520</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="hibernate conf fix">
+      <created>1670700710322</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670700710322</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +170,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="hibernate setup - in-memory H2" />
     <MESSAGE value="model" />
-    <option name="LAST_COMMIT_MESSAGE" value="model" />
+    <MESSAGE value="hibernate conf fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="hibernate conf fix" />
   </component>
 </project>
