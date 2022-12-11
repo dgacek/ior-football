@@ -1,11 +1,20 @@
 package ior.project;
 
+import com.google.gson.Gson;
 import ior.project.model.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,6 +35,40 @@ public class Main {
             Session session = sessionFactory.getCurrentSession();
 
             //TUTAJ WSTAW BAJER MARCIN
+            Player player1 = new Player();
+            player1.setFName("Janusz");
+            player1.setSName("Sram");
+
+            Player player2 = new Player();
+            player2.setFName("Sebastian");
+            player2.setSName("Bąk");
+
+            Team team = new Team();
+            team.setCountry("Bangladesz");
+            team.setPlayers(Arrays.asList(player1,player2));
+
+            Coach coach = new Coach();
+            coach.setFName("Tytus");
+            coach.setSName("Bomba");
+            coach.setTeam(team);
+
+            Transaction transaction = session.beginTransaction();
+            session.persist(player1);
+            session.persist(player2);
+            session.persist(team);
+            session.persist(coach);
+            transaction.commit();
+
+            session = sessionFactory.getCurrentSession();
+            transaction = session.beginTransaction();
+            CriteriaBuilder cb = session.getCriteriaBuilder();
+            CriteriaQuery<Player> cr = cb.createQuery(Player.class);
+            Root<Player> root = cr.from(Player.class);
+            cr.select(root);
+            Query<Player> query = session.createQuery(cr);
+            List<Player> results = query.getResultList();
+            System.out.println(new Gson().toJson(results));
+            transaction.rollback();
 
             session.close();
         } catch (Exception e) {

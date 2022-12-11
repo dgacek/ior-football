@@ -2,7 +2,9 @@ package ior.project.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -10,6 +12,9 @@ import java.util.Date;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
+@Table(name = "match")
 public class Match implements Serializable {
 
     @Id

@@ -1,11 +1,13 @@
 package ior.project.model;
 
 import jakarta.persistence.Entity;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@Setter
+@Getter
+@Table(name = "player")
 public class Player extends Person {
 }
