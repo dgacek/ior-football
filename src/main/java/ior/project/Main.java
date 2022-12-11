@@ -33,35 +33,12 @@ public class Main {
             sb.applySettings(cfg.getProperties());
             StandardServiceRegistry standardServiceRegistry = sb.build();
             SessionFactory sessionFactory = cfg.buildSessionFactory(standardServiceRegistry);
+
+            DatabaseInitialData databaseInitialData = new DatabaseInitialData();
+            databaseInitialData.initData((sessionFactory));
+
             Session session = sessionFactory.getCurrentSession();
-
-            Team team = new Team();
-            team.setCountry("Bangladesz");
-
-            Player player1 = new Player();
-            player1.setFName("Janusz");
-            player1.setSName("Sram");
-            player1.setTeam(team);
-
-            Player player2 = new Player();
-            player2.setFName("Sebastian");
-            player2.setSName("Bąk");
-            player2.setTeam(team);
-
-            Coach coach = new Coach();
-            coach.setFName("Tytus");
-            coach.setSName("Bomba");
-            coach.setTeam(team);
-
             Transaction transaction = session.beginTransaction();
-            session.persist(player1);
-            session.persist(player2);
-            session.persist(team);
-            session.persist(coach);
-            transaction.commit();
-
-            session = sessionFactory.getCurrentSession();
-            transaction = session.beginTransaction();
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaQuery<Player> cr = cb.createQuery(Player.class);
             Root<Player> root = cr.from(Player.class);
