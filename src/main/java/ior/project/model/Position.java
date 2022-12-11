@@ -27,6 +27,8 @@ public class Position implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private Match match;
 
-    @Enumerated
+    @Enumerated(EnumType.ORDINAL)
     private PositionName name;
+
+    private Integer time;
 }

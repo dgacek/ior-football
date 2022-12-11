@@ -4,17 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d30a1f21-5200-4f5a-ad41-bf8304cdef0c" name="Changes" comment="prepare main 2">
+    <list default="true" id="d30a1f21-5200-4f5a-ad41-bf8304cdef0c" name="Changes" comment="relation fix, embedded db for easier testing">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3c8c56407c35e5f5ebbd6c7250a79af8128a13a6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52114fdaa426e9b83a3c5df4e11c4f0ebbcd814b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/a/9aed88f31eac276604c6355c1adcc0bce1f80fd6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed67eb178d523a4b3f117dcbe0eda5196367ceec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f7819ea138c33fec28e7e536cb2de34db38fc121" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/model/Coach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/model/Coach.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/model/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/model/Match.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/model/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/model/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/model/Stadium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/model/Stadium.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ior/project/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ior/project/model/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
@@ -130,7 +136,7 @@
       <workItem from="1670697134027" duration="80000" />
       <workItem from="1670698688508" duration="4160000" />
       <workItem from="1670703339506" duration="667000" />
-      <workItem from="1670773539041" duration="3459000" />
+      <workItem from="1670773539041" duration="8733000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1670537304302</created>
@@ -181,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670703759476</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="working query demo">
+      <created>1670777342814</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670777342814</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,18 +218,9 @@
     <MESSAGE value="hibernate conf fix" />
     <MESSAGE value="prepare main" />
     <MESSAGE value="prepare main 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepare main 2" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ior/project/Main.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="working query demo" />
+    <MESSAGE value="relation fix, embedded db for easier testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="relation fix, embedded db for easier testing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

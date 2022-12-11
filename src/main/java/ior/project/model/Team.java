@@ -22,10 +22,10 @@ public class Team implements Serializable {
     @Column(nullable = false, updatable = false)
     private long id;
 
-    @OneToOne(mappedBy = "team")
+    @OneToOne
     private Coach coach;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "team")
     private List<Player> players;
 
     private String country;

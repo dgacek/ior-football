@@ -1,6 +1,8 @@
 package ior.project;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.graph.GraphAdapterBuilder;
 import ior.project.model.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -13,7 +15,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -34,18 +35,18 @@ public class Main {
             SessionFactory sessionFactory = cfg.buildSessionFactory(standardServiceRegistry);
             Session session = sessionFactory.getCurrentSession();
 
-            //TUTAJ WSTAW BAJER MARCIN
+            Team team = new Team();
+            team.setCountry("Bangladesz");
+
             Player player1 = new Player();
             player1.setFName("Janusz");
             player1.setSName("Sram");
+            player1.setTeam(team);
 
             Player player2 = new Player();
             player2.setFName("Sebastian");
             player2.setSName("Bąk");
-
-            Team team = new Team();
-            team.setCountry("Bangladesz");
-            team.setPlayers(Arrays.asList(player1,player2));
+            player2.setTeam(team);
 
             Coach coach = new Coach();
             coach.setFName("Tytus");
@@ -67,7 +68,13 @@ public class Main {
             cr.select(root);
             Query<Player> query = session.createQuery(cr);
             List<Player> results = query.getResultList();
-            System.out.println(new Gson().toJson(results));
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            new GraphAdapterBuilder()
+                    .addType(Player.class)
+                    .addType(Team.class)
+                    .registerOn(gsonBuilder);
+            Gson gson = gsonBuilder.create();
+            System.out.println(gson.toJson(results));
             transaction.rollback();
 
             session.close();
