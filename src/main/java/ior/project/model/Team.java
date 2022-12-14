@@ -22,7 +22,7 @@ public class Team implements Serializable {
     @Column(nullable = false, updatable = false)
     private long id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Coach coach;
 
     @OneToMany(mappedBy = "team")
