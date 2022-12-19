@@ -1,5 +1,7 @@
 package ior.project;
 
+import ior.project.model.Position;
+import ior.project.model.PositionName;
 import jakarta.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,6 +25,16 @@ public class JPQL {
         transaction.commit();
         session.close();
         return players;
+    }
+
+    public void changePlayersPosition() {
+        Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery("select p from Player d join Position p on d.id = p.player.id where d.sName LIKE 'M%'");
+        List<Position> positions = query.getResultList();
+        positions.forEach(position -> position.setName(PositionName.RESERVE));
+        transaction.commit();
+        session.close();
     }
 
 }

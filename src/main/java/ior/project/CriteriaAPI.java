@@ -1,8 +1,11 @@
 package ior.project;
 
 import ior.project.model.Player;
+import ior.project.model.Position;
+import ior.project.model.PositionName;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -28,5 +31,20 @@ public class CriteriaAPI {
         transaction.commit();
         session.close();
         return players;
+    }
+
+    public void changePlayersPosition() {
+        // TODO: doesn't work
+        Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Position> criteria = builder.createQuery(Position.class);
+        Root<Player> playerRoot = criteria.from(Player.class);
+        Join<Player, Position> positionJoin = playerRoot.join("position");
+        criteria.select(positionJoin).where(builder.like(playerRoot.get("sName"), "M%"));
+        List<Position> positions = session.createQuery(criteria).getResultList();
+        positions.forEach(position -> position.setName(PositionName.RESERVE));
+        transaction.commit();
+        session.close();
     }
 }

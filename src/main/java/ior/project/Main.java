@@ -26,11 +26,16 @@ public class Main {
             DatabaseInitialData databaseInitialData = new DatabaseInitialData();
             databaseInitialData.initData((sessionFactory));
 
+            // Query 1
             JPQL jpqlQueries = new JPQL(sessionFactory);
             System.out.println(jpqlQueries.getPlayersNames());
 
             CriteriaAPI criteriaAPIQueries = new CriteriaAPI(sessionFactory);
             System.out.println(criteriaAPIQueries.getPlayersNames());
+
+            //Query 2
+            jpqlQueries.changePlayersPosition();
+//            criteriaAPIQueries.changePlayersPosition();
 
             System.out.println('A');
         } catch (Exception e) {
