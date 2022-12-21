@@ -37,4 +37,14 @@ public class JPQL {
         session.close();
     }
 
+    public List<Object[]> countPositionsGreaterThanOrEqualTwo() {
+        Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery("select p.name, count(p.id) from Position p GROUP BY p.name HAVING count(p.id) >= 5");
+        List<Object[]> countPositions = query.getResultList();
+        transaction.commit();
+        session.close();
+        return countPositions;
+    }
+
 }

@@ -47,4 +47,23 @@ public class CriteriaAPI {
         transaction.commit();
         session.close();
     }
+
+    public List<Object[]> countPositionsGreaterThanOrEqualTwo() {
+        Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Object[]> criteria = builder.createQuery(Object[].class);
+        Root<Position> root = criteria.from(Position.class);
+        criteria.multiselect(root.get("name"), builder.count(root.get("id")));
+        criteria.groupBy(root.get("name"));
+        criteria.having(builder.ge(builder.count(root.get("id")), 5));
+
+        List<Object[]> countPositions = session.createQuery(criteria).getResultList();
+
+        transaction.commit();
+        session.close();
+        return countPositions;
+    }
+
 }

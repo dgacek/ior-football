@@ -26,8 +26,9 @@ public class Main {
             DatabaseInitialData databaseInitialData = new DatabaseInitialData();
             databaseInitialData.initData((sessionFactory));
 
-            // Query 1
             JPQL jpqlQueries = new JPQL(sessionFactory);
+
+            // Query 1
             System.out.println(jpqlQueries.getPlayersNames());
 
             CriteriaAPI criteriaAPIQueries = new CriteriaAPI(sessionFactory);
@@ -37,7 +38,10 @@ public class Main {
             jpqlQueries.changePlayersPosition();
 //            criteriaAPIQueries.changePlayersPosition();
 
-            System.out.println('A');
+            //Query 3
+            System.out.println(jpqlQueries.countPositionsGreaterThanOrEqualTwo().size());
+            System.out.println(criteriaAPIQueries.countPositionsGreaterThanOrEqualTwo().size());
+
         } catch (Exception e) {
             e.printStackTrace();
         }
