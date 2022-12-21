@@ -27,11 +27,10 @@ public class Main {
             databaseInitialData.initData((sessionFactory));
 
             JPQL jpqlQueries = new JPQL(sessionFactory);
+            CriteriaAPI criteriaAPIQueries = new CriteriaAPI(sessionFactory);
 
             // Query 1
             System.out.println(jpqlQueries.getPlayersNames());
-
-            CriteriaAPI criteriaAPIQueries = new CriteriaAPI(sessionFactory);
             System.out.println(criteriaAPIQueries.getPlayersNames());
 
             //Query 2
