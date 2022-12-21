@@ -36,7 +36,7 @@ public class Main {
 
             //Query 2
             jpqlQueries.changePlayersPosition();
-//            criteriaAPIQueries.changePlayersPosition();
+            criteriaAPIQueries.changePlayersPosition();
 
             //Query 3
             System.out.println(jpqlQueries.countPositionsGreaterThanOrEqualTwo().size());

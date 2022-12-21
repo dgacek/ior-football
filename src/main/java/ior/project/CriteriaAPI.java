@@ -3,10 +3,7 @@ package ior.project;
 import ior.project.model.Player;
 import ior.project.model.Position;
 import ior.project.model.PositionName;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Join;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -34,19 +31,26 @@ public class CriteriaAPI {
     }
 
     public void changePlayersPosition() {
-        // TODO: doesn't work
         Session session = sessionFactory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
+
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Position> criteria = builder.createQuery(Position.class);
-        Root<Player> playerRoot = criteria.from(Player.class);
-        Join<Player, Position> positionJoin = playerRoot.join("position");
-        criteria.select(positionJoin).where(builder.like(playerRoot.get("sName"), "M%"));
-        List<Position> positions = session.createQuery(criteria).getResultList();
-        positions.forEach(position -> position.setName(PositionName.RESERVE));
+        CriteriaUpdate<Position> update = builder.createCriteriaUpdate(Position.class);
+        Root<Position> root = update.from(Position.class);
+        update.set(root.get("name"), PositionName.RESERVE);
+
+        Subquery<Player> subquery = update.subquery(Player.class);
+        Root<Player> subRoot = subquery.from(Player.class);
+        subquery.select(subRoot);
+        subquery.where(builder.like(subRoot.get("sName"), "M%"));
+
+        update.where(builder.in(root.get("player")).value(subquery));
+
+        session.createQuery(update).executeUpdate();
         transaction.commit();
         session.close();
     }
+
 
     public List<Object[]> countPositionsGreaterThanOrEqualTwo() {
         Session session = sessionFactory.getCurrentSession();
